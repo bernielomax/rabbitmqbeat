@@ -1,0 +1,244 @@
+- name: nodes
+  type: group
+  description: >
+    `nodes` contains the metrics that were obtained by the RabbitMQ API's node call.
+  fields:
+    - name: cluster_links
+      type: list
+      description: >
+        The nodes cluster links.
+    - name: disk_free
+      type: long
+      description: >
+        The amount of free disk on the node in bytes.
+    - name: disk_free_details
+      type: group
+      description: >
+        The nodes free disk details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes free disk consumption rate in bytes.
+    - name: io_read_avg_time
+      type: long
+      description: >
+        The nodes average io read time.
+    - name: io_read_avg_time_details
+      type: group
+      description: >
+        The nodes average io time details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The average time rate at which bytes are read.
+    - name: io_read_bytes
+      type: long
+      description: >
+        The nodes io bytes read.
+    - name: io_read_bytes_details
+      type: group
+      description: >
+        The nodes bytes read details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The average rate at which bytes are read.
+    - name: io_read_count
+      type: long
+      description: >
+        The nodes io read count.
+    - name: io_read_count_details
+      type: group
+      description: >
+        The nodes io read details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The average io read rate.
+    - name: io_sync_avg_time
+      type: long
+      description: >
+        The nodes io sync average time.
+    - name: io_sync_avg_time_details
+      type: group
+      description: >
+        The nodes io sync details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes average io sync rate.
+    - name: io_write_avg_time
+      type: long
+      description: >
+        The nodes io write average time.
+    - name: io_write_avg_time_details
+      type: group
+      description: >
+        The nodes io write details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes average io write rate.
+    - name: mem_used
+      type: long
+      description: >
+        The nodes io write average time.
+    - name: mem_used_details
+      type: group
+      description: >
+        The nodes io write details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes average io write rate.
+    - name: mnesia_disk_tx_count
+      type: long
+      description: >
+        The nodes mnesia transmit count.
+    - name: mnesia_disk_tx_count_details
+      type: group
+      description: >
+        The nodes mnesia transmit details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes mnesia transmit count rate.
+    - name: mnesia_ram_tx_count
+      type: long
+      description: >
+        The nodes mnesia ram transmit count.
+    - name: mnesia_ram_tx_count_details
+      type: group
+      description: >
+        The nodes mnesia ram transmit details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes mnesia ram transmit count rate.
+    - name: proc_used
+      type: long
+      description: >
+        The nodes proc used.
+    - name: proc_used_details
+      type: group
+      description: >
+        The nodes proc used details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes proc used rate.
+    - name: sockets_used
+      type: long
+      description: >
+        The nodes sockets used.
+    - name: sockets_used_details
+      type: group
+      description: >
+        The nodes sockets used details.
+      fields:
+        - name: rate
+          type: float
+          description: >
+            The nodes sockets used rate.
+    - name: partitions
+      type: dict
+      description: >
+        The nodes partitions.
+    - name: os_pid
+      type: keyword
+      description: >
+        The nodes RabbitMQ pid.
+    - name: fd_total
+      type: long
+      description: >
+        The nodes total file descriptors.
+    - name: sockets_total
+      type: long
+      description: >
+        The nodes total sockets used.
+    - name: mem_limit
+      type: long
+      description: >
+        THe nodes memory limit.
+    - name: mem_alarm
+      type: boolean
+      description: >
+        The nodes memory limit.
+    - name: disk_free_limit
+      type: float
+      description: >
+        The nodes free disk limit.
+    - name: disk_free_alarm
+      type: boolean
+      description: >
+        The nodes free disk alarm.
+    - name: proc_total
+      type: long
+      description: >
+        The nodes total procs.
+    - name: rates_mode
+      type: keyword
+      description: >
+        The nodes rates mode.
+    - name: uptime
+      type: long
+      description: >
+        The nodes uptime in seconds.
+    - name: run_queue
+      type: long
+      description: >
+        The nodes total number of procs in the run queue.
+    - name: processors
+      type: long
+      description: >
+        The nodes total number of processors.
+    - name: exchange_types
+      type: dict
+      description: >
+        A list of exchange types configured on the node.
+    - name: auth_mechanisms
+      type: dict
+      description: >
+        A list of auth mechanisms configured on the node.
+    - name: applications
+      type: dict
+      description: >
+        A list of applications configured on the node.
+    - name: contexts
+      type: dict
+      description: >
+        A list of contexts configured on the node.
+    - name: config_files
+      type: dict
+      description: >
+        A list of configurations files configured on the node.
+    - name: net_ticktime
+      type: long
+      description: >
+        The nodes net tick time.
+    - name: enabled_plugins
+      type: dict
+      description: >
+        A list of plugins configured on the node.
+    - name: name
+      type: keyword
+      description: >
+        The node name.
+    - name: type
+      type: keyword
+      description: >
+        The node type.
+    - name: running
+      type: boolean
+      description: >
+        The node running boolean.

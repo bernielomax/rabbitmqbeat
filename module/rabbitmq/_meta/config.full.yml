@@ -1,0 +1,13 @@
+#- module: rabbitmq
+  #metricsets: ["queues","overview"]
+  #enabled: true
+  #period: 30s
+
+  # The RabbitMQ management url
+  #hosts: ["http://localhost:15672"]
+
+  # The RabbitMQ management username
+  #username: guest
+
+  # The RabbitMQ management password
+  #password: guest

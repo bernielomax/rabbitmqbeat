@@ -1,0 +1,91 @@
+{
+    "@timestamp":"2016-05-23T08:05:34.853Z",
+    "beat":{
+        "hostname":"beathost",
+        "name":"beathost"
+    },
+    "metricset":{
+        "host":"localhost",
+        "module":"mysql",
+        "name":"status",
+        "rtt":44269
+    },
+    "rabbitmq":{
+        "nodes": [
+            {
+                "cluster_links": [],
+                "disk_free": 303781601280,
+                "disk_free_details": {
+                    "rate": -819.2
+                },
+                "io_read_avg_time": 0,
+                "io_read_avg_time_details": {
+                    "rate": 0
+                },
+                "io_read_bytes": 1,
+                "io_read_bytes_details": {
+                    "rate": 0
+                },
+                "io_read_count": 1,
+                "io_read_count_details": {
+                    "rate": 0
+                },
+                "io_sync_avg_time": 0,
+                "io_sync_avg_time_details": {
+                    "rate": 0
+                },
+                "io_write_avg_time": 0,
+                "io_write_avg_time_details": {
+                    "rate": 0
+                },
+                "mem_used": 58582536,
+                "mem_used_details": {
+                    "rate": 58302.4
+                },
+                "mnesia_disk_tx_count": 70,
+                "mnesia_disk_tx_count_details": {
+                    "rate": 0
+                },
+                "mnesia_ram_tx_count": 56,
+                "mnesia_ram_tx_count_details": {
+                    "rate": 0
+                },
+                "proc_used": 250,
+                "proc_used_details": {
+                    "rate": 1
+                },
+                "sockets_used": 0,
+                "sockets_used_details": {
+                    "rate": 0
+                },
+                "partitions": [],
+                "os_pid": "1251",
+                "fd_total": 256,
+                "sockets_total": 138,
+                "mem_limit": 5680581836,
+                "mem_alarm": false,
+                "disk_free_limit": 50000000,
+                "disk_free_alarm": false,
+                "proc_total": 1048576,
+                "rates_mode": "basic",
+                "uptime": 123842102,
+                "run_queue": 0,
+                "processors": 8,
+                "exchange_types": [],
+                "auth_mechanisms": [],
+                "applications": [],
+                "contexts": [],
+                "log_file": "/usr/local/var/log/rabbitmq/rabbit@localhost.log",
+                "sasl_log_file": "/usr/local/var/log/rabbitmq/rabbit@localhost-sasl.log",
+                "db_dir": "/usr/local/var/lib/rabbitmq/mnesia/rabbit@localhost",
+                "config_files": [],
+                "net_ticktime": 60,
+                "enabled_plugins": [],
+                "name": "rabbit@localhost",
+                "type": "disc",
+                "running": true
+            }
+        ]
+    },
+    "type":"metricsets"
+}

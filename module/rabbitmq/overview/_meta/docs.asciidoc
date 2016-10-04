@@ -1,0 +1,3 @@
+=== rabbitmq overview MetricSet
+
+This is the overview metricset of the module rabbitmq.

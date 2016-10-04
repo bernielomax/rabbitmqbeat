@@ -1,0 +1,46 @@
+////
+This file is generated! See scripts/docs_collector.py
+////
+
+[[metricbeat-module-rabbitmq]]
+== rabbitmq Module
+
+This is the rabbitmq Module.
+
+
+
+[float]
+=== Example Configuration
+
+The RabbitMQ module supports the standard configuration options that are described
+in <<configuration-metricbeat>>. Here is an example configuration:
+
+[source,yaml]
+----
+metricbeat.modules:
+- module: rabbitmq
+  metricsets: ["nodes", "queues","overview"]
+  enabled: true
+  period: 30s
+  hosts: ["http://localhost:15672"]
+  username: guest
+  password: guest
+----
+
+[float]
+=== Metricsets
+
+The following metricsets are available:
+
+* <<metricbeat-metricset-rabbitmq-nodes,nodes>>
+
+* <<metricbeat-metricset-rabbitmq-overview,overview>>
+
+* <<metricbeat-metricset-rabbitmq-queues,queues>>
+
+include::rabbitmq/nodes.asciidoc[]
+
+include::rabbitmq/overview.asciidoc[]
+
+include::rabbitmq/queues.asciidoc[]
+

@@ -1,0 +1,710 @@
+- key: common
+  title: Common
+  description: >
+    Contains common fields available in all event types.
+  fields:
+
+    - name: metricset.module
+      description: >
+        The name of the module that generated the event.
+
+    - name: metricset.name
+      description: >
+        The name of the metricset that generated the event.
+
+    - name: metricset.host
+      description: >
+        Hostname of the machine from which the metricset was collected. This
+        field may not be present when the data was collected locally.
+
+    - name: metricset.rtt
+      type: long
+      required: true
+      description: >
+        Event round trip time in microseconds.
+
+    - name: type
+      required: true
+      example: metricsets
+      description: >
+        The document type. Always set to "metricsets".
+- key: rabbitmq
+  title: "RabbitMQ"
+  description: >
+    RabbitMQ server metricsets collected from the RabbitMQ API.
+  fields:
+    - name: rabbitmq
+      type: group
+      description: >
+        `rabbitmq` contains the metrics that were obtained from RabbitMQ.
+      fields:
+        - name: nodes
+          type: group
+          description: >
+            `nodes` contains the metrics that were obtained by the RabbitMQ API's node call.
+          fields:
+            - name: cluster_links
+              type: list
+              description: >
+                The nodes cluster links.
+            - name: disk_free
+              type: long
+              description: >
+                The amount of free disk on the node in bytes.
+            - name: disk_free_details
+              type: group
+              description: >
+                The nodes free disk details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes free disk consumption rate in bytes.
+            - name: io_read_avg_time
+              type: long
+              description: >
+                The nodes average io read time.
+            - name: io_read_avg_time_details
+              type: group
+              description: >
+                The nodes average io time details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The average time rate at which bytes are read.
+            - name: io_read_bytes
+              type: long
+              description: >
+                The nodes io bytes read.
+            - name: io_read_bytes_details
+              type: group
+              description: >
+                The nodes bytes read details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The average rate at which bytes are read.
+            - name: io_read_count
+              type: long
+              description: >
+                The nodes io read count.
+            - name: io_read_count_details
+              type: group
+              description: >
+                The nodes io read details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The average io read rate.
+            - name: io_sync_avg_time
+              type: long
+              description: >
+                The nodes io sync average time.
+            - name: io_sync_avg_time_details
+              type: group
+              description: >
+                The nodes io sync details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes average io sync rate.
+            - name: io_write_avg_time
+              type: long
+              description: >
+                The nodes io write average time.
+            - name: io_write_avg_time_details
+              type: group
+              description: >
+                The nodes io write details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes average io write rate.
+            - name: mem_used
+              type: long
+              description: >
+                The nodes io write average time.
+            - name: mem_used_details
+              type: group
+              description: >
+                The nodes io write details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes average io write rate.
+            - name: mnesia_disk_tx_count
+              type: long
+              description: >
+                The nodes mnesia transmit count.
+            - name: mnesia_disk_tx_count_details
+              type: group
+              description: >
+                The nodes mnesia transmit details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes mnesia transmit count rate.
+            - name: mnesia_ram_tx_count
+              type: long
+              description: >
+                The nodes mnesia ram transmit count.
+            - name: mnesia_ram_tx_count_details
+              type: group
+              description: >
+                The nodes mnesia ram transmit details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes mnesia ram transmit count rate.
+            - name: proc_used
+              type: long
+              description: >
+                The nodes proc used.
+            - name: proc_used_details
+              type: group
+              description: >
+                The nodes proc used details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes proc used rate.
+            - name: sockets_used
+              type: long
+              description: >
+                The nodes sockets used.
+            - name: sockets_used_details
+              type: group
+              description: >
+                The nodes sockets used details.
+              fields:
+                - name: rate
+                  type: float
+                  description: >
+                    The nodes sockets used rate.
+            - name: partitions
+              type: dict
+              description: >
+                The nodes partitions.
+            - name: os_pid
+              type: keyword
+              description: >
+                The nodes RabbitMQ pid.
+            - name: fd_total
+              type: long
+              description: >
+                The nodes total file descriptors.
+            - name: sockets_total
+              type: long
+              description: >
+                The nodes total sockets used.
+            - name: mem_limit
+              type: long
+              description: >
+                THe nodes memory limit.
+            - name: mem_alarm
+              type: boolean
+              description: >
+                The nodes memory limit.
+            - name: disk_free_limit
+              type: float
+              description: >
+                The nodes free disk limit.
+            - name: disk_free_alarm
+              type: boolean
+              description: >
+                The nodes free disk alarm.
+            - name: proc_total
+              type: long
+              description: >
+                The nodes total procs.
+            - name: rates_mode
+              type: keyword
+              description: >
+                The nodes rates mode.
+            - name: uptime
+              type: long
+              description: >
+                The nodes uptime in seconds.
+            - name: run_queue
+              type: long
+              description: >
+                The nodes total number of procs in the run queue.
+            - name: processors
+              type: long
+              description: >
+                The nodes total number of processors.
+            - name: exchange_types
+              type: dict
+              description: >
+                A list of exchange types configured on the node.
+            - name: auth_mechanisms
+              type: dict
+              description: >
+                A list of auth mechanisms configured on the node.
+            - name: applications
+              type: dict
+              description: >
+                A list of applications configured on the node.
+            - name: contexts
+              type: dict
+              description: >
+                A list of contexts configured on the node.
+            - name: config_files
+              type: dict
+              description: >
+                A list of configurations files configured on the node.
+            - name: net_ticktime
+              type: long
+              description: >
+                The nodes net tick time.
+            - name: enabled_plugins
+              type: dict
+              description: >
+                A list of plugins configured on the node.
+            - name: name
+              type: keyword
+              description: >
+                The node name.
+            - name: type
+              type: keyword
+              description: >
+                The node type.
+            - name: running
+              type: boolean
+              description: >
+                The node running boolean.
+        - name: overview
+          type: group
+          description: >
+            `overview` contains the metrics that were obtained by the RabbitMQ API's overview call.
+          fields:
+            - name: management_version
+              type: text
+              description: >
+                The version of the RabbitMQ management plugin.
+            - name: management_version
+              type: keyword
+              description: >
+                The management version.
+            - name: rates_mode
+              type: keyword
+              description: >
+                The rates mode.
+            - name: exchange_types
+              type: dict
+              description: >
+                The exchange types.
+            - name: rabbitmq_version
+              type: keyword
+              description: >
+                The RabbitMQ version.
+            - name: cluster_name
+              type: keyword
+              description: >
+                The cluster name.
+            - name: erlang_version
+              type: keyword
+              description: >
+                The Erlang version.
+            - name: erlang_full_version
+              type: text
+              description: >
+                A full description of the Erlang version.
+            - name: message_stats
+              type: group
+              description: >
+                Message stats.
+              fields:
+                - name: publish
+                  type: long
+                  description: >
+                   Published messages.
+                - name: publish_details
+                  type: group
+                  description: >
+                    Published details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The published rate.
+                - name: deliver_get
+                  type: long
+                  description: >
+                   Deliver get messages.
+                - name: publish_details
+                  type: group
+                  description: >
+                    Deliver get details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The deliver get rate.
+                - name: deliver_no_ack
+                  type: long
+                  description: >
+                   Deliver no ack messages.
+                - name: deliver_no_ack_details
+                  type: group
+                  description: >
+                    Deliver no ack details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The deliver no ack rate.
+            - name: queue_totals
+              type: group
+              description: >
+                Queue totals
+              fields:
+                - name: messages
+                  type: long
+                  description: >
+                   Messages total.
+                - name: messages_details
+                  type: group
+                  description: >
+                    Messages details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The messages rate.
+                - name: messages_ready
+                  type: long
+                  description: >
+                   Messages ready total.
+                - name: messages_ready_details
+                  type: group
+                  description: >
+                    Messages ready details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The messages ready rate.
+                - name: messages_unacknowledged
+                  type: long
+                  description: >
+                   Messages unacknowledged total.
+                - name: messages_unacknowledged_details
+                  type: group
+                  description: >
+                    Messages unacknowledged details.
+                  fields:
+                    - name: rate
+                      type: float
+                      description: >
+                       The messages unacknowledged rate.
+            - name: object_totals
+              type: group
+              description: >
+                Object totals
+              fields:
+                - name: consumers
+                  type: long
+                  description: >
+                    Consumer total.
+                - name: queues
+                  type: long
+                  description: >
+                    Queues total.
+                - name: exchanges
+                  type: long
+                  description: >
+                    Exchanges total.
+                - name: connections
+                  type: long
+                  description: >
+                    Connections total.
+                - name: channels
+                  type: long
+                  description: >
+                    Channels total.
+            - name: statistics_db_event_queue
+              type: long
+              description: >
+                The statistics db event queue.
+            - name: node
+              type: keyword
+              description: >
+                The node name.
+            - name: statistics_db_node
+              type: keyword
+              description: >
+                The statistics db node.
+            - name: listeners
+              type: dict
+              description: >
+                The listeners metrics.
+            - name: contexts
+              type: group
+              description: >
+                The list of contexts
+              fields:
+                - name: node
+                  type: keyword
+                  description: >
+                    The node name.
+                - name: description
+                  type: text
+                  description: >
+                    The description of the node.
+                - name: path
+                  type: keyword
+                  description: >
+                    The node path.
+                - name: port
+                  type: keyword
+                  description: >
+                    The node port.
+
+        - name: queues
+          type: group
+          description: >
+            `queues` contains the metrics that were obtained by the RabbitMQ API's queues call.
+          fields:
+            - name: memory
+              format: bytes
+              type: long
+              description: >
+                The number of bytes in memory consumed by the RabbitMQ queue.
+            - name: message_stats
+              type: group
+              description: >
+                The message statistics object.
+              fields:
+                - name: deliver_get
+                  type: long
+                  description: >
+                    The total deliver get messages.
+                - name: deliver_get_details
+                  type: group
+                  description: >
+                    The message deliver get details statistics object.
+                  fields:
+                    - name: rate
+                      type: long
+                      description: >
+                        The deliver get rate.
+                - name: deliver_no_ack
+                  type: long
+                  description: >
+                    The total deliver no ack messages.
+                - name: deliver_no_ack_details
+                  type: group
+                  description: >
+                    The deliver no ack details statistics object.
+                  fields:
+                    - name: rate
+                      type: long
+                      description: >
+                        The deliver no ack rate.
+                - name: publish
+                  type: long
+                  description: >
+                    The total published messages.
+                - name: publish_details
+                  type: group
+                  description: >
+                    The publish details statistics object.
+                  fields:
+                    - name: rate
+                      type: long
+                      description: >
+                        The publish rate.
+            - name: messages
+              type: long
+              description: >
+                The total number of messages.
+            - name: messages_details
+              type: group
+              description: >
+                The messages details object.
+              fields:
+                - name: rate
+                  type: long
+                  description: >
+                    The messages rate.
+            - name: messages_ready
+              type: long
+              description: >
+                The total number of messages ready.
+            - name: messages_ready_details
+              type: group
+              description: >
+                The messages ready details object.
+              fields:
+                - name: rate
+                  type: long
+                  description: >
+                    The messages ready rate.
+            - name: messages_unacknowledged
+              type: long
+              description: >
+                The total number of messages unacknowledged.
+            - name: messages_unacknowledged_details
+              type: group
+              description: >
+                The messages ready details object.
+              fields:
+                - name: rate
+                  type: long
+                  description: >
+                    The messages ready rate.
+            - name: idle_since
+              type: date
+              description: >
+                The date since the RabbitMQ queue has been idle.
+
+
+            - name: consumers
+              type: integer
+              description: >
+                The number of consumers connected to the RabbitMQ queue.
+
+            - name: state
+              type: keyword
+              description: >
+                The state of the RabbitMQ queue.
+            - name: messages_ram
+              type: integer
+              description: >
+                The total number of messages in ram.
+            - name: messages_ready_ram
+              type: integer
+              description: >
+                The total number of messages ready in ram.
+            - name: messages_unacknowledged_ram
+              type: integer
+              description: >
+                The total number of messages unacknowledged in ram.
+            - name: messages_persistent
+              type: integer
+              description: >
+                The total number of persistent messages.
+            - name: message_bytes
+              type: integer
+              description: >
+                The total number of messages in bytes.
+            - name: message_bytes_ready
+              type: integer
+              description: >
+                The total number of ready messages in bytes.
+            - name: message_bytes_unacknowledged
+              type: integer
+              description: >
+                The total number of unacknowledged messages in bytes.
+            - name: message_bytes_ram
+              type: integer
+              description: >
+                The total number of messages in ram in bytes.
+            - name: message_bytes_persistent
+              type: integer
+              description: >
+                The total number of messages on disk in bytes.
+            - name: head_message_timestamp
+              type: integer
+              description: >
+                The head message timestamp.
+            - name: disk_reads
+              type: integer
+              description: >
+                The total disk reads.
+            - name: disk_writes
+              type: integer
+              description: >
+                The total disk writes.
+            - name: backing_queue_status
+              type: group
+              description: >
+                The backing queue status object.
+              fields:
+                - name: mode
+                  type: keyword
+                  description: >
+                    The backing queue status mode.
+                - name: q1
+                  type: long
+                  description: >
+                    The backing queue status q1.
+                - name: q2
+                  type: long
+                  description: >
+                    The backing queue status q2.
+                - name: delta
+                  type: dict
+                  description: >
+                    The backing queue status delta.
+                - name: q3
+                  type: long
+                  description: >
+                    The backing queue status q3.
+                - name: q4
+                  type: long
+                  description: >
+                    The backing queue status q4.
+                - name: len
+                  type: long
+                  description: >
+                    The backing queue status length.
+                - name: target_ram_count
+                  type: keyword
+                  description: >
+                    The backing queue status target ram count.
+                - name: next_seq_id
+                  type: long
+                  description: >
+                    The backing queue status next sequence id.
+                - name: avg_ingress_rate
+                  type: float
+                  description: >
+                    The backing queue status average ingress rate.
+                - name: avg_egress_rate
+                  type: float
+                  description: >
+                    The backing queue status average egress rate.
+                - name: avg_ack_ingress_rate
+                  type: float
+                  description: >
+                    The backing queue status average acknowledge ingress rate.
+                - name: avg_ack_egress_rate
+                  type: float
+                  description: >
+                    The backing queue status average acknowledge egress rate.
+            - name: name
+              type: keyword
+              description: >
+                The name of the queue.
+            - name: vhost
+              type: text
+              desription: >
+                The name of the vhost that the queue belongs to.
+            - name: durable
+              type: boolean
+              description: >
+                If queue is durable.
+            - name: auto_delete
+              type: boolean
+              description: >
+                If autodelete is enabled.
+            - name: exclusive
+              type: boolean
+              description: >
+                If the queue is exclusive.
+            - name: node
+              type: keyword
+              description: >
+                The name of the RabbitMQ cluster node.
+

@@ -1,0 +1,1356 @@
+
+////
+This file is generated! See etc/fields.yml and scripts/generate_field_docs.py
+////
+
+[[exported-fields]]
+= Exported Fields
+
+[partintro]
+
+--
+This document describes the fields that are exported by Rabbitmqbeat. They are
+grouped in the following categories:
+
+* <<exported-fields-beat>>
+* <<exported-fields-common>>
+* <<exported-fields-rabbitmq>>
+
+--
+[[exported-fields-beat]]
+== Beat Fields
+
+Contains common beat fields available in all event types.
+
+
+
+[float]
+=== beat.name
+
+The name of the Beat sending the log messages. If the Beat name is set in the configuration file, then that value is used. If it is not set, the hostname is used. To set the Beat name, use the `name` option in the configuration file.
+
+
+[float]
+=== beat.hostname
+
+The hostname as returned by the operating system on which the Beat is running.
+
+
+[float]
+=== @timestamp
+
+type: date
+
+example: August 26th 2016, 12:35:53.332
+
+format: date
+
+required: True
+
+The timestamp when the event log record was generated.
+
+
+[float]
+=== tags
+
+Arbitrary tags that can be set per Beat and per transaction type.
+
+
+[float]
+=== fields
+
+type: dict
+
+Contains user configurable fields.
+
+
+[[exported-fields-common]]
+== Common Fields
+
+Contains common fields available in all event types.
+
+
+
+[float]
+=== metricset.module
+
+The name of the module that generated the event.
+
+
+[float]
+=== metricset.name
+
+The name of the metricset that generated the event.
+
+
+[float]
+=== metricset.host
+
+Hostname of the machine from which the metricset was collected. This field may not be present when the data was collected locally.
+
+
+[float]
+=== metricset.rtt
+
+type: long
+
+required: True
+
+Event round trip time in microseconds.
+
+
+[float]
+=== type
+
+example: metricsets
+
+required: True
+
+The document type. Always set to "metricsets".
+
+
+[[exported-fields-rabbitmq]]
+== RabbitMQ Fields
+
+RabbitMQ server metricsets collected from the RabbitMQ API.
+
+
+
+[float]
+== rabbitmq Fields
+
+`rabbitmq` contains the metrics that were obtained from RabbitMQ.
+
+
+
+[float]
+== nodes Fields
+
+`nodes` contains the metrics that were obtained by the RabbitMQ API's node call.
+
+
+
+[float]
+=== rabbitmq.nodes.cluster_links
+
+type: list
+
+The nodes cluster links.
+
+
+[float]
+=== rabbitmq.nodes.disk_free
+
+type: long
+
+The amount of free disk on the node in bytes.
+
+
+[float]
+== disk_free_details Fields
+
+The nodes free disk details.
+
+
+
+[float]
+=== rabbitmq.nodes.disk_free_details.rate
+
+type: float
+
+The nodes free disk consumption rate in bytes.
+
+
+[float]
+=== rabbitmq.nodes.io_read_avg_time
+
+type: long
+
+The nodes average io read time.
+
+
+[float]
+== io_read_avg_time_details Fields
+
+The nodes average io time details.
+
+
+
+[float]
+=== rabbitmq.nodes.io_read_avg_time_details.rate
+
+type: float
+
+The average time rate at which bytes are read.
+
+
+[float]
+=== rabbitmq.nodes.io_read_bytes
+
+type: long
+
+The nodes io bytes read.
+
+
+[float]
+== io_read_bytes_details Fields
+
+The nodes bytes read details.
+
+
+
+[float]
+=== rabbitmq.nodes.io_read_bytes_details.rate
+
+type: float
+
+The average rate at which bytes are read.
+
+
+[float]
+=== rabbitmq.nodes.io_read_count
+
+type: long
+
+The nodes io read count.
+
+
+[float]
+== io_read_count_details Fields
+
+The nodes io read details.
+
+
+
+[float]
+=== rabbitmq.nodes.io_read_count_details.rate
+
+type: float
+
+The average io read rate.
+
+
+[float]
+=== rabbitmq.nodes.io_sync_avg_time
+
+type: long
+
+The nodes io sync average time.
+
+
+[float]
+== io_sync_avg_time_details Fields
+
+The nodes io sync details.
+
+
+
+[float]
+=== rabbitmq.nodes.io_sync_avg_time_details.rate
+
+type: float
+
+The nodes average io sync rate.
+
+
+[float]
+=== rabbitmq.nodes.io_write_avg_time
+
+type: long
+
+The nodes io write average time.
+
+
+[float]
+== io_write_avg_time_details Fields
+
+The nodes io write details.
+
+
+
+[float]
+=== rabbitmq.nodes.io_write_avg_time_details.rate
+
+type: float
+
+The nodes average io write rate.
+
+
+[float]
+=== rabbitmq.nodes.mem_used
+
+type: long
+
+The nodes io write average time.
+
+
+[float]
+== mem_used_details Fields
+
+The nodes io write details.
+
+
+
+[float]
+=== rabbitmq.nodes.mem_used_details.rate
+
+type: float
+
+The nodes average io write rate.
+
+
+[float]
+=== rabbitmq.nodes.mnesia_disk_tx_count
+
+type: long
+
+The nodes mnesia transmit count.
+
+
+[float]
+== mnesia_disk_tx_count_details Fields
+
+The nodes mnesia transmit details.
+
+
+
+[float]
+=== rabbitmq.nodes.mnesia_disk_tx_count_details.rate
+
+type: float
+
+The nodes mnesia transmit count rate.
+
+
+[float]
+=== rabbitmq.nodes.mnesia_ram_tx_count
+
+type: long
+
+The nodes mnesia ram transmit count.
+
+
+[float]
+== mnesia_ram_tx_count_details Fields
+
+The nodes mnesia ram transmit details.
+
+
+
+[float]
+=== rabbitmq.nodes.mnesia_ram_tx_count_details.rate
+
+type: float
+
+The nodes mnesia ram transmit count rate.
+
+
+[float]
+=== rabbitmq.nodes.proc_used
+
+type: long
+
+The nodes proc used.
+
+
+[float]
+== proc_used_details Fields
+
+The nodes proc used details.
+
+
+
+[float]
+=== rabbitmq.nodes.proc_used_details.rate
+
+type: float
+
+The nodes proc used rate.
+
+
+[float]
+=== rabbitmq.nodes.sockets_used
+
+type: long
+
+The nodes sockets used.
+
+
+[float]
+== sockets_used_details Fields
+
+The nodes sockets used details.
+
+
+
+[float]
+=== rabbitmq.nodes.sockets_used_details.rate
+
+type: float
+
+The nodes sockets used rate.
+
+
+[float]
+=== rabbitmq.nodes.partitions
+
+type: dict
+
+The nodes partitions.
+
+
+[float]
+=== rabbitmq.nodes.os_pid
+
+type: keyword
+
+The nodes RabbitMQ pid.
+
+
+[float]
+=== rabbitmq.nodes.fd_total
+
+type: long
+
+The nodes total file descriptors.
+
+
+[float]
+=== rabbitmq.nodes.sockets_total
+
+type: long
+
+The nodes total sockets used.
+
+
+[float]
+=== rabbitmq.nodes.mem_limit
+
+type: long
+
+THe nodes memory limit.
+
+
+[float]
+=== rabbitmq.nodes.mem_alarm
+
+type: boolean
+
+The nodes memory limit.
+
+
+[float]
+=== rabbitmq.nodes.disk_free_limit
+
+type: float
+
+The nodes free disk limit.
+
+
+[float]
+=== rabbitmq.nodes.disk_free_alarm
+
+type: boolean
+
+The nodes free disk alarm.
+
+
+[float]
+=== rabbitmq.nodes.proc_total
+
+type: long
+
+The nodes total procs.
+
+
+[float]
+=== rabbitmq.nodes.rates_mode
+
+type: keyword
+
+The nodes rates mode.
+
+
+[float]
+=== rabbitmq.nodes.uptime
+
+type: long
+
+The nodes uptime in seconds.
+
+
+[float]
+=== rabbitmq.nodes.run_queue
+
+type: long
+
+The nodes total number of procs in the run queue.
+
+
+[float]
+=== rabbitmq.nodes.processors
+
+type: long
+
+The nodes total number of processors.
+
+
+[float]
+=== rabbitmq.nodes.exchange_types
+
+type: dict
+
+A list of exchange types configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.auth_mechanisms
+
+type: dict
+
+A list of auth mechanisms configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.applications
+
+type: dict
+
+A list of applications configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.contexts
+
+type: dict
+
+A list of contexts configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.config_files
+
+type: dict
+
+A list of configurations files configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.net_ticktime
+
+type: long
+
+The nodes net tick time.
+
+
+[float]
+=== rabbitmq.nodes.enabled_plugins
+
+type: dict
+
+A list of plugins configured on the node.
+
+
+[float]
+=== rabbitmq.nodes.name
+
+type: keyword
+
+The node name.
+
+
+[float]
+=== rabbitmq.nodes.type
+
+type: keyword
+
+The node type.
+
+
+[float]
+=== rabbitmq.nodes.running
+
+type: boolean
+
+The node running boolean.
+
+
+[float]
+== overview Fields
+
+`overview` contains the metrics that were obtained by the RabbitMQ API's overview call.
+
+
+
+[float]
+=== rabbitmq.overview.management_version
+
+type: text
+
+The version of the RabbitMQ management plugin.
+
+
+[float]
+=== rabbitmq.overview.management_version
+
+type: keyword
+
+The management version.
+
+
+[float]
+=== rabbitmq.overview.rates_mode
+
+type: keyword
+
+The rates mode.
+
+
+[float]
+=== rabbitmq.overview.exchange_types
+
+type: dict
+
+The exchange types.
+
+
+[float]
+=== rabbitmq.overview.rabbitmq_version
+
+type: keyword
+
+The RabbitMQ version.
+
+
+[float]
+=== rabbitmq.overview.cluster_name
+
+type: keyword
+
+The cluster name.
+
+
+[float]
+=== rabbitmq.overview.erlang_version
+
+type: keyword
+
+The Erlang version.
+
+
+[float]
+=== rabbitmq.overview.erlang_full_version
+
+type: text
+
+A full description of the Erlang version.
+
+
+[float]
+== message_stats Fields
+
+Message stats.
+
+
+
+[float]
+=== rabbitmq.overview.message_stats.publish
+
+type: long
+
+Published messages.
+
+
+[float]
+== publish_details Fields
+
+Published details.
+
+
+
+[float]
+=== rabbitmq.overview.message_stats.publish_details.rate
+
+type: float
+
+The published rate.
+
+
+[float]
+=== rabbitmq.overview.message_stats.deliver_get
+
+type: long
+
+Deliver get messages.
+
+
+[float]
+== publish_details Fields
+
+Deliver get details.
+
+
+
+[float]
+=== rabbitmq.overview.message_stats.publish_details.rate
+
+type: float
+
+The deliver get rate.
+
+
+[float]
+=== rabbitmq.overview.message_stats.deliver_no_ack
+
+type: long
+
+Deliver no ack messages.
+
+
+[float]
+== deliver_no_ack_details Fields
+
+Deliver no ack details.
+
+
+
+[float]
+=== rabbitmq.overview.message_stats.deliver_no_ack_details.rate
+
+type: float
+
+The deliver no ack rate.
+
+
+[float]
+== queue_totals Fields
+
+Queue totals
+
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages
+
+type: long
+
+Messages total.
+
+
+[float]
+== messages_details Fields
+
+Messages details.
+
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages_details.rate
+
+type: float
+
+The messages rate.
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages_ready
+
+type: long
+
+Messages ready total.
+
+
+[float]
+== messages_ready_details Fields
+
+Messages ready details.
+
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages_ready_details.rate
+
+type: float
+
+The messages ready rate.
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages_unacknowledged
+
+type: long
+
+Messages unacknowledged total.
+
+
+[float]
+== messages_unacknowledged_details Fields
+
+Messages unacknowledged details.
+
+
+
+[float]
+=== rabbitmq.overview.queue_totals.messages_unacknowledged_details.rate
+
+type: float
+
+The messages unacknowledged rate.
+
+
+[float]
+== object_totals Fields
+
+Object totals
+
+
+
+[float]
+=== rabbitmq.overview.object_totals.consumers
+
+type: long
+
+Consumer total.
+
+
+[float]
+=== rabbitmq.overview.object_totals.queues
+
+type: long
+
+Queues total.
+
+
+[float]
+=== rabbitmq.overview.object_totals.exchanges
+
+type: long
+
+Exchanges total.
+
+
+[float]
+=== rabbitmq.overview.object_totals.connections
+
+type: long
+
+Connections total.
+
+
+[float]
+=== rabbitmq.overview.object_totals.channels
+
+type: long
+
+Channels total.
+
+
+[float]
+=== rabbitmq.overview.statistics_db_event_queue
+
+type: long
+
+The statistics db event queue.
+
+
+[float]
+=== rabbitmq.overview.node
+
+type: keyword
+
+The node name.
+
+
+[float]
+=== rabbitmq.overview.statistics_db_node
+
+type: keyword
+
+The statistics db node.
+
+
+[float]
+=== rabbitmq.overview.listeners
+
+type: dict
+
+The listeners metrics.
+
+
+[float]
+== contexts Fields
+
+The list of contexts
+
+
+
+[float]
+=== rabbitmq.overview.contexts.node
+
+type: keyword
+
+The node name.
+
+
+[float]
+=== rabbitmq.overview.contexts.description
+
+type: text
+
+The description of the node.
+
+
+[float]
+=== rabbitmq.overview.contexts.path
+
+type: keyword
+
+The node path.
+
+
+[float]
+=== rabbitmq.overview.contexts.port
+
+type: keyword
+
+The node port.
+
+
+[float]
+== queues Fields
+
+`queues` contains the metrics that were obtained by the RabbitMQ API's queues call.
+
+
+
+[float]
+=== rabbitmq.queues.memory
+
+type: long
+
+format: bytes
+
+The number of bytes in memory consumed by the RabbitMQ queue.
+
+
+[float]
+== message_stats Fields
+
+The message statistics object.
+
+
+
+[float]
+=== rabbitmq.queues.message_stats.deliver_get
+
+type: long
+
+The total deliver get messages.
+
+
+[float]
+== deliver_get_details Fields
+
+The message deliver get details statistics object.
+
+
+
+[float]
+=== rabbitmq.queues.message_stats.deliver_get_details.rate
+
+type: long
+
+The deliver get rate.
+
+
+[float]
+=== rabbitmq.queues.message_stats.deliver_no_ack
+
+type: long
+
+The total deliver no ack messages.
+
+
+[float]
+== deliver_no_ack_details Fields
+
+The deliver no ack details statistics object.
+
+
+
+[float]
+=== rabbitmq.queues.message_stats.deliver_no_ack_details.rate
+
+type: long
+
+The deliver no ack rate.
+
+
+[float]
+=== rabbitmq.queues.message_stats.publish
+
+type: long
+
+The total published messages.
+
+
+[float]
+== publish_details Fields
+
+The publish details statistics object.
+
+
+
+[float]
+=== rabbitmq.queues.message_stats.publish_details.rate
+
+type: long
+
+The publish rate.
+
+
+[float]
+=== rabbitmq.queues.messages
+
+type: long
+
+The total number of messages.
+
+
+[float]
+== messages_details Fields
+
+The messages details object.
+
+
+
+[float]
+=== rabbitmq.queues.messages_details.rate
+
+type: long
+
+The messages rate.
+
+
+[float]
+=== rabbitmq.queues.messages_ready
+
+type: long
+
+The total number of messages ready.
+
+
+[float]
+== messages_ready_details Fields
+
+The messages ready details object.
+
+
+
+[float]
+=== rabbitmq.queues.messages_ready_details.rate
+
+type: long
+
+The messages ready rate.
+
+
+[float]
+=== rabbitmq.queues.messages_unacknowledged
+
+type: long
+
+The total number of messages unacknowledged.
+
+
+[float]
+== messages_unacknowledged_details Fields
+
+The messages ready details object.
+
+
+
+[float]
+=== rabbitmq.queues.messages_unacknowledged_details.rate
+
+type: long
+
+The messages ready rate.
+
+
+[float]
+=== rabbitmq.queues.idle_since
+
+type: date
+
+The date since the RabbitMQ queue has been idle.
+
+
+[float]
+=== rabbitmq.queues.consumers
+
+type: integer
+
+The number of consumers connected to the RabbitMQ queue.
+
+
+[float]
+=== rabbitmq.queues.state
+
+type: keyword
+
+The state of the RabbitMQ queue.
+
+
+[float]
+=== rabbitmq.queues.messages_ram
+
+type: integer
+
+The total number of messages in ram.
+
+
+[float]
+=== rabbitmq.queues.messages_ready_ram
+
+type: integer
+
+The total number of messages ready in ram.
+
+
+[float]
+=== rabbitmq.queues.messages_unacknowledged_ram
+
+type: integer
+
+The total number of messages unacknowledged in ram.
+
+
+[float]
+=== rabbitmq.queues.messages_persistent
+
+type: integer
+
+The total number of persistent messages.
+
+
+[float]
+=== rabbitmq.queues.message_bytes
+
+type: integer
+
+The total number of messages in bytes.
+
+
+[float]
+=== rabbitmq.queues.message_bytes_ready
+
+type: integer
+
+The total number of ready messages in bytes.
+
+
+[float]
+=== rabbitmq.queues.message_bytes_unacknowledged
+
+type: integer
+
+The total number of unacknowledged messages in bytes.
+
+
+[float]
+=== rabbitmq.queues.message_bytes_ram
+
+type: integer
+
+The total number of messages in ram in bytes.
+
+
+[float]
+=== rabbitmq.queues.message_bytes_persistent
+
+type: integer
+
+The total number of messages on disk in bytes.
+
+
+[float]
+=== rabbitmq.queues.head_message_timestamp
+
+type: integer
+
+The head message timestamp.
+
+
+[float]
+=== rabbitmq.queues.disk_reads
+
+type: integer
+
+The total disk reads.
+
+
+[float]
+=== rabbitmq.queues.disk_writes
+
+type: integer
+
+The total disk writes.
+
+
+[float]
+== backing_queue_status Fields
+
+The backing queue status object.
+
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.mode
+
+type: keyword
+
+The backing queue status mode.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.q1
+
+type: long
+
+The backing queue status q1.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.q2
+
+type: long
+
+The backing queue status q2.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.delta
+
+type: dict
+
+The backing queue status delta.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.q3
+
+type: long
+
+The backing queue status q3.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.q4
+
+type: long
+
+The backing queue status q4.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.len
+
+type: long
+
+The backing queue status length.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.target_ram_count
+
+type: keyword
+
+The backing queue status target ram count.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.next_seq_id
+
+type: long
+
+The backing queue status next sequence id.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.avg_ingress_rate
+
+type: float
+
+The backing queue status average ingress rate.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.avg_egress_rate
+
+type: float
+
+The backing queue status average egress rate.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.avg_ack_ingress_rate
+
+type: float
+
+The backing queue status average acknowledge ingress rate.
+
+
+[float]
+=== rabbitmq.queues.backing_queue_status.avg_ack_egress_rate
+
+type: float
+
+The backing queue status average acknowledge egress rate.
+
+
+[float]
+=== rabbitmq.queues.name
+
+type: keyword
+
+The name of the queue.
+
+
+[float]
+=== rabbitmq.queues.vhost
+
+type: text
+
+[float]
+=== rabbitmq.queues.durable
+
+type: boolean
+
+If queue is durable.
+
+
+[float]
+=== rabbitmq.queues.auto_delete
+
+type: boolean
+
+If autodelete is enabled.
+
+
+[float]
+=== rabbitmq.queues.exclusive
+
+type: boolean
+
+If the queue is exclusive.
+
+
+[float]
+=== rabbitmq.queues.node
+
+type: keyword
+
+The name of the RabbitMQ cluster node.
+
+

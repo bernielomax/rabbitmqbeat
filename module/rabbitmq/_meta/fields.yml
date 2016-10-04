@@ -1,0 +1,10 @@
+- key: rabbitmq
+  title: "RabbitMQ"
+  description: >
+    RabbitMQ server metricsets collected from the RabbitMQ API.
+  fields:
+    - name: rabbitmq
+      type: group
+      description: >
+        `rabbitmq` contains the metrics that were obtained from RabbitMQ.
+      fields:

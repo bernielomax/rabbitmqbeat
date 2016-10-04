@@ -1,0 +1,600 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "norms": {
+          "enabled": false
+        }
+      },
+      "_meta": {
+        "version": "6.0.0-alpha1"
+      },
+      "dynamic_templates": [
+        {
+          "fields": {
+            "mapping": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "match_mapping_type": "string",
+            "path_match": "fields.*"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            }
+          }
+        },
+        "metricset": {
+          "properties": {
+            "host": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "module": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "rtt": {
+              "type": "long"
+            }
+          }
+        },
+        "rabbitmq": {
+          "properties": {
+            "nodes": {
+              "properties": {
+                "disk_free": {
+                  "type": "long"
+                },
+                "disk_free_alarm": {
+                  "type": "boolean"
+                },
+                "disk_free_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "disk_free_limit": {
+                  "type": "float"
+                },
+                "fd_total": {
+                  "type": "long"
+                },
+                "io_read_avg_time": {
+                  "type": "long"
+                },
+                "io_read_avg_time_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "io_read_bytes": {
+                  "type": "long"
+                },
+                "io_read_bytes_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "io_read_count": {
+                  "type": "long"
+                },
+                "io_read_count_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "io_sync_avg_time": {
+                  "type": "long"
+                },
+                "io_sync_avg_time_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "io_write_avg_time": {
+                  "type": "long"
+                },
+                "io_write_avg_time_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "mem_alarm": {
+                  "type": "boolean"
+                },
+                "mem_limit": {
+                  "type": "long"
+                },
+                "mem_used": {
+                  "type": "long"
+                },
+                "mem_used_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "mnesia_disk_tx_count": {
+                  "type": "long"
+                },
+                "mnesia_disk_tx_count_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "mnesia_ram_tx_count": {
+                  "type": "long"
+                },
+                "mnesia_ram_tx_count_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "net_ticktime": {
+                  "type": "long"
+                },
+                "os_pid": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "proc_total": {
+                  "type": "long"
+                },
+                "proc_used": {
+                  "type": "long"
+                },
+                "proc_used_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "processors": {
+                  "type": "long"
+                },
+                "rates_mode": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "run_queue": {
+                  "type": "long"
+                },
+                "running": {
+                  "type": "boolean"
+                },
+                "sockets_total": {
+                  "type": "long"
+                },
+                "sockets_used": {
+                  "type": "long"
+                },
+                "sockets_used_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "float"
+                    }
+                  }
+                },
+                "type": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "uptime": {
+                  "type": "long"
+                }
+              }
+            },
+            "overview": {
+              "properties": {
+                "cluster_name": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "contexts": {
+                  "properties": {
+                    "description": {
+                      "index": "analyzed",
+                      "norms": {
+                        "enabled": false
+                      },
+                      "type": "string"
+                    },
+                    "node": {
+                      "ignore_above": 1024,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    },
+                    "path": {
+                      "ignore_above": 1024,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    },
+                    "port": {
+                      "ignore_above": 1024,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    }
+                  }
+                },
+                "erlang_full_version": {
+                  "index": "analyzed",
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "string"
+                },
+                "erlang_version": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "management_version": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "message_stats": {
+                  "properties": {
+                    "deliver_get": {
+                      "type": "long"
+                    },
+                    "deliver_no_ack": {
+                      "type": "long"
+                    },
+                    "deliver_no_ack_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "float"
+                        }
+                      }
+                    },
+                    "publish": {
+                      "type": "long"
+                    },
+                    "publish_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "float"
+                        }
+                      }
+                    }
+                  }
+                },
+                "node": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "object_totals": {
+                  "properties": {
+                    "channels": {
+                      "type": "long"
+                    },
+                    "connections": {
+                      "type": "long"
+                    },
+                    "consumers": {
+                      "type": "long"
+                    },
+                    "exchanges": {
+                      "type": "long"
+                    },
+                    "queues": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "queue_totals": {
+                  "properties": {
+                    "messages": {
+                      "type": "long"
+                    },
+                    "messages_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "float"
+                        }
+                      }
+                    },
+                    "messages_ready": {
+                      "type": "long"
+                    },
+                    "messages_ready_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "float"
+                        }
+                      }
+                    },
+                    "messages_unacknowledged": {
+                      "type": "long"
+                    },
+                    "messages_unacknowledged_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "float"
+                        }
+                      }
+                    }
+                  }
+                },
+                "rabbitmq_version": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "rates_mode": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "statistics_db_event_queue": {
+                  "type": "long"
+                },
+                "statistics_db_node": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                }
+              }
+            },
+            "queues": {
+              "properties": {
+                "auto_delete": {
+                  "type": "boolean"
+                },
+                "backing_queue_status": {
+                  "properties": {
+                    "avg_ack_egress_rate": {
+                      "type": "float"
+                    },
+                    "avg_ack_ingress_rate": {
+                      "type": "float"
+                    },
+                    "avg_egress_rate": {
+                      "type": "float"
+                    },
+                    "avg_ingress_rate": {
+                      "type": "float"
+                    },
+                    "len": {
+                      "type": "long"
+                    },
+                    "mode": {
+                      "ignore_above": 1024,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    },
+                    "next_seq_id": {
+                      "type": "long"
+                    },
+                    "q1": {
+                      "type": "long"
+                    },
+                    "q2": {
+                      "type": "long"
+                    },
+                    "q3": {
+                      "type": "long"
+                    },
+                    "q4": {
+                      "type": "long"
+                    },
+                    "target_ram_count": {
+                      "ignore_above": 1024,
+                      "index": "not_analyzed",
+                      "type": "string"
+                    }
+                  }
+                },
+                "consumers": {
+                  "type": "long"
+                },
+                "disk_reads": {
+                  "type": "long"
+                },
+                "disk_writes": {
+                  "type": "long"
+                },
+                "durable": {
+                  "type": "boolean"
+                },
+                "exclusive": {
+                  "type": "boolean"
+                },
+                "head_message_timestamp": {
+                  "type": "long"
+                },
+                "idle_since": {
+                  "type": "date"
+                },
+                "memory": {
+                  "type": "long"
+                },
+                "message_bytes": {
+                  "type": "long"
+                },
+                "message_bytes_persistent": {
+                  "type": "long"
+                },
+                "message_bytes_ram": {
+                  "type": "long"
+                },
+                "message_bytes_ready": {
+                  "type": "long"
+                },
+                "message_bytes_unacknowledged": {
+                  "type": "long"
+                },
+                "message_stats": {
+                  "properties": {
+                    "deliver_get": {
+                      "type": "long"
+                    },
+                    "deliver_get_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "long"
+                        }
+                      }
+                    },
+                    "deliver_no_ack": {
+                      "type": "long"
+                    },
+                    "deliver_no_ack_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "long"
+                        }
+                      }
+                    },
+                    "publish": {
+                      "type": "long"
+                    },
+                    "publish_details": {
+                      "properties": {
+                        "rate": {
+                          "type": "long"
+                        }
+                      }
+                    }
+                  }
+                },
+                "messages": {
+                  "type": "long"
+                },
+                "messages_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "messages_persistent": {
+                  "type": "long"
+                },
+                "messages_ram": {
+                  "type": "long"
+                },
+                "messages_ready": {
+                  "type": "long"
+                },
+                "messages_ready_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "messages_ready_ram": {
+                  "type": "long"
+                },
+                "messages_unacknowledged": {
+                  "type": "long"
+                },
+                "messages_unacknowledged_details": {
+                  "properties": {
+                    "rate": {
+                      "type": "long"
+                    }
+                  }
+                },
+                "messages_unacknowledged_ram": {
+                  "type": "long"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "node": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "state": {
+                  "ignore_above": 1024,
+                  "index": "not_analyzed",
+                  "type": "string"
+                },
+                "vhost": {
+                  "index": "analyzed",
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "type": {
+          "ignore_above": 1024,
+          "index": "not_analyzed",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "order": 0,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "rabbitmqbeat-*"
+}

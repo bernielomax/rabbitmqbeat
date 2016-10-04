@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;metricbeat&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../../../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../labix.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../.." />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../cloud.google.com" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../rsc.io" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../../../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../labix.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../.." />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../cloud.google.com" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../rsc.io" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

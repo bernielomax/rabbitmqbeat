@@ -1,0 +1,187 @@
+- name: overview
+  type: group
+  description: >
+    `overview` contains the metrics that were obtained by the RabbitMQ API's overview call.
+  fields:
+    - name: management_version
+      type: text
+      description: >
+        The version of the RabbitMQ management plugin.
+    - name: management_version
+      type: keyword
+      description: >
+        The management version.
+    - name: rates_mode
+      type: keyword
+      description: >
+        The rates mode.
+    - name: exchange_types
+      type: dict
+      description: >
+        The exchange types.
+    - name: rabbitmq_version
+      type: keyword
+      description: >
+        The RabbitMQ version.
+    - name: cluster_name
+      type: keyword
+      description: >
+        The cluster name.
+    - name: erlang_version
+      type: keyword
+      description: >
+        The Erlang version.
+    - name: erlang_full_version
+      type: text
+      description: >
+        A full description of the Erlang version.
+    - name: message_stats
+      type: group
+      description: >
+        Message stats.
+      fields:
+        - name: publish
+          type: long
+          description: >
+           Published messages.
+        - name: publish_details
+          type: group
+          description: >
+            Published details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The published rate.
+        - name: deliver_get
+          type: long
+          description: >
+           Deliver get messages.
+        - name: publish_details
+          type: group
+          description: >
+            Deliver get details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The deliver get rate.
+        - name: deliver_no_ack
+          type: long
+          description: >
+           Deliver no ack messages.
+        - name: deliver_no_ack_details
+          type: group
+          description: >
+            Deliver no ack details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The deliver no ack rate.
+    - name: queue_totals
+      type: group
+      description: >
+        Queue totals
+      fields:
+        - name: messages
+          type: long
+          description: >
+           Messages total.
+        - name: messages_details
+          type: group
+          description: >
+            Messages details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The messages rate.
+        - name: messages_ready
+          type: long
+          description: >
+           Messages ready total.
+        - name: messages_ready_details
+          type: group
+          description: >
+            Messages ready details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The messages ready rate.
+        - name: messages_unacknowledged
+          type: long
+          description: >
+           Messages unacknowledged total.
+        - name: messages_unacknowledged_details
+          type: group
+          description: >
+            Messages unacknowledged details.
+          fields:
+            - name: rate
+              type: float
+              description: >
+               The messages unacknowledged rate.
+    - name: object_totals
+      type: group
+      description: >
+        Object totals
+      fields:
+        - name: consumers
+          type: long
+          description: >
+            Consumer total.
+        - name: queues
+          type: long
+          description: >
+            Queues total.
+        - name: exchanges
+          type: long
+          description: >
+            Exchanges total.
+        - name: connections
+          type: long
+          description: >
+            Connections total.
+        - name: channels
+          type: long
+          description: >
+            Channels total.
+    - name: statistics_db_event_queue
+      type: long
+      description: >
+        The statistics db event queue.
+    - name: node
+      type: keyword
+      description: >
+        The node name.
+    - name: statistics_db_node
+      type: keyword
+      description: >
+        The statistics db node.
+    - name: listeners
+      type: dict
+      description: >
+        The listeners metrics.
+    - name: contexts
+      type: group
+      description: >
+        The list of contexts
+      fields:
+        - name: node
+          type: keyword
+          description: >
+            The node name.
+        - name: description
+          type: text
+          description: >
+            The description of the node.
+        - name: path
+          type: keyword
+          description: >
+            The node path.
+        - name: port
+          type: keyword
+          description: >
+            The node port.

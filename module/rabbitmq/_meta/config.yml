@@ -1,0 +1,7 @@
+- module: rabbitmq
+  metricsets: ["nodes", "queues","overview"]
+  enabled: true
+  period: 30s
+  hosts: ["http://localhost:15672"]
+  username: guest
+  password: guest
