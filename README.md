@@ -8,7 +8,7 @@ Rabbitmqbeat is a beat based on metricbeat which was generated with metricbeat/m
 To get started run the following command. This command should only be run once.
 
 ```
-make
+make setup
 ```
 
 It will ask you for the module and metricset name. Insert the name accordingly.
